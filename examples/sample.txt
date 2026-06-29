@@ -1,0 +1,1 @@
+context_window 8192 input_tokens: 8100 reserved_output: 0 truncation: none
