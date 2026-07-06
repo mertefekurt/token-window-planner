@@ -1,71 +1,45 @@
-# token-window-planner
+# Token Window Planner
 
-`token-window-planner` is a small local CLI that audit LLM prompt assembly plans for token budget and truncation risk.
+![Token Window Planner cover](assets/readme-cover.svg)
 
-## Why it is useful
+> Audit LLM prompt assembly plans for token budget and truncation risk
 
-LLM apps fail when prompts silently exceed context windows. This CLI flags assembly plans that lack reserved output or truncation policy.
+![stack](https://img.shields.io/badge/stack-Python-16a34a?style=flat-square) ![python](https://img.shields.io/badge/python-3.11-dc2626?style=flat-square) ![license](https://img.shields.io/badge/license-MIT-7c3aed?style=flat-square) ![ci](https://img.shields.io/badge/ci-GitHub%20Actions-0891b2?style=flat-square)
 
-## Key features
+## At a glance
 
-- reads text, JSON, JSONL, or CSV inputs
-- returns Markdown or JSON reports
-- supports severity-based CI exit codes
-- keeps all checks deterministic and offline
-- includes focused rules for this project:
-- `no-output-reserve`: no output token reserve is declared
-- `missing-truncation`: truncation policy is missing
-- `near-window-limit`: input token count is close to common context limits
+| Area | Detail |
+| --- | --- |
+| Focus | context planning |
+| Command | `token-window-planner` |
+| Formats | text, JSON, JSONL, CSV |
+| Output | Markdown table or JSON |
 
-## Installation
+## What it checks
+
+| Rule | Severity | What it catches |
+| --- | --- | --- |
+| `no-output-reserve` | high | no output token reserve is declared |
+| `missing-truncation` | medium | truncation policy is missing |
+| `near-window-limit` | low | input token count is close to common context limits |
+
+## Try it locally
 
 ```bash
 python -m pip install -e ".[dev]"
-```
-
-## Usage
-
-```bash
 token-window-planner examples/sample.txt
-token-window-planner examples/sample.txt --json
-token-window-planner path/to/input.txt --fail-on medium --out report.md
-python -m token_window_planner --help
+token-window-planner examples/sample.txt --json --fail-on medium
 ```
 
-Example input:
+## Notes from the code
 
-```text
-context_window 8192 input_tokens: 8100 reserved_output: 0 truncation: none
-```
+`rules.py` keeps the project policy explicit, while `core.py` handles parsing and report rendering. The CLI stays thin on purpose so the checks are easy to test.
 
-## CLI options
-
-```text
-token-window-planner INPUT [--format auto|text|jsonl|csv|json] [--json]
-             [--fail-on low|medium|high] [--out PATH]
-```
-
-`INPUT` is any prompt assembly plan or token budget notes. The tool exits with code `2` when findings meet the selected
-threshold, which makes it easy to use in GitHub Actions or release checks.
-
-## Workflow
-
-```mermaid
-flowchart LR
-    A[input file] --> B[format reader]
-    B --> C[project-specific rules]
-    C --> D[risk score]
-    D --> E[Markdown or JSON report]
-```
-
-## Tests
+## Verify
 
 ```bash
+python -m pip install -e ".[dev]"
 ruff check .
 pytest
 python -m token_window_planner --help
 ```
-
-## License
-
-MIT
