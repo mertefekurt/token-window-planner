@@ -1,36 +1,26 @@
-![Token Window Planner cover](assets/readme-cover.svg)
-
 # Token Window Planner
 
-> Audit LLM prompt assembly plans for token budget and truncation risk
+![Token Window Planner cover](assets/readme-cover.svg)
 
-This is a review desk for context planning. The useful part is not a dashboard; it is the tiny repeatable moment where vague records become specific findings.
+Token Window Planner is meant for quick pull-request checks around context planning. It favors explicit rules over a bulky dashboard.
 
-## Finding catalog for `token-window-planner`
+## Review path
 
-| Finding | Level | Why it matters |
-| --- | --- | --- |
-| `no-output-reserve` | high | no output token reserve is declared |
-| `missing-truncation` | medium | truncation policy is missing |
-| `near-window-limit` | low | input token count is close to common context limits |
+![Rule flow](assets/readme-diagram.svg)
 
-## Try the sample
+## Rule ledger
+
+| Signal | Level | What it flags | Fix direction |
+| --- | --- | --- | --- |
+| `no-output-reserve` | high | no output token reserve is declared | Reserve output tokens before adding context. |
+| `missing-truncation` | medium | truncation policy is missing | Define deterministic truncation or retrieval cutoff behavior. |
+| `near-window-limit` | low | input token count is close to common context limits | Add budget checks and telemetry before production. |
+
+## Local check
 
 ```bash
 git clone https://github.com/mertefekurt/token-window-planner.git
 cd token-window-planner
-python -m venv .venv
-source .venv/bin/activate
 python -m pip install -e ".[dev]"
-```
-
-```bash
 token-window-planner examples/sample.txt
-token-window-planner examples/sample.txt --json
 ```
-
-## Reading the output
-
-- Markdown is meant for humans reviewing a change.
-- JSON is meant for CI, scripts, or saved reports.
-- `--fail-on` lets the repo decide how strict a gate should be.

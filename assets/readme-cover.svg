@@ -1,10 +1,25 @@
 <svg width="1280" height="420" viewBox="0 0 1280 420" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Token Window Planner cover">
-  <rect width="1280" height="420" rx="28" fill="#1f130f"/>
 
-  <rect x="86" y="82" width="360" height="256" rx="34" fill="#b45309" opacity=".18"/>
-  <path d="M162 154h208M162 214h128M162 274h176" stroke="#fff7ed" stroke-width="15" stroke-linecap="round"/>
-  <text x="502" y="185" fill="#fff7ed" font-family="Aptos, Segoe UI, ui-sans-serif, system-ui" font-size="53" font-weight="800">Token Window Planner</text>
-  <text x="506" y="246" fill="#fed7aa" font-family="Aptos, Segoe UI, ui-sans-serif, system-ui" font-size="24">Focused CLI for context planning</text>
-  <rect x="506" y="282" width="360" height="44" rx="22" fill="#f97316" opacity=".18"/>
-  <text x="528" y="311" fill="#fff7ed" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="16">DEVELOPER TOOLS</text>
+  <defs>
+    <linearGradient id="g" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#a78bfa" stop-opacity=".34"/>
+      <stop offset=".54" stop-color="#1d102b" stop-opacity="0"/>
+      <stop offset="1" stop-color="#f472b6" stop-opacity=".30"/>
+    </linearGradient>
+    <filter id="grain" x="-20%" y="-20%" width="140%" height="140%">
+      <feTurbulence type="fractalNoise" baseFrequency=".85" numOctaves="2" seed="2" result="noise"/>
+      <feColorMatrix type="saturate" values="0"/>
+      <feComponentTransfer><feFuncA type="table" tableValues="0 .10"/></feComponentTransfer>
+      <feBlend mode="soft-light" in2="SourceGraphic"/>
+    </filter>
+  </defs>
+  <rect width="1280" height="420" rx="30" fill="#1d102b"/>
+  <rect width="1280" height="420" rx="30" fill="url(#g)" filter="url(#grain)"/>
+
+  <path d="M0 330c190-70 330-42 490 0s328 68 520-8 278-68 270-64v162H0z" fill="#a78bfa" opacity=".16"/>
+  <path d="M90 92h1088v236H90z" fill="none" stroke="#a78bfa" stroke-width="8"/>
+  <path d="M90 142h1088" stroke="#a78bfa" stroke-width="8"/>
+  <text x="132" y="220" fill="#faf5ff" font-family="Space Grotesk, ui-sans-serif, system-ui" font-size="60" font-weight="850">Token Window Planner</text>
+  <text x="136" y="276" fill="#e9d5ff" font-family="Space Grotesk, ui-sans-serif, system-ui" font-size="23">Audit LLM prompt assembly plans for token budget and...</text>
+  <text x="874" y="120" fill="#f472b6" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="16" font-weight="800">DEVELOPER TOOL</text>
 </svg>

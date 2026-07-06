@@ -1,0 +1,42 @@
+<svg width="1280" height="520" viewBox="0 0 1280 520" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Token Window Planner workflow diagram">
+<rect width="1280" height="520" rx="28" fill="#1d102b"/>
+<text x="72" y="82" fill="#faf5ff" font-family="Inter, ui-sans-serif, system-ui" font-size="34" font-weight="800">Token Window Planner workflow</text>
+<text x="72" y="122" fill="#e9d5ff" font-family="Inter, ui-sans-serif, system-ui" font-size="20">Audit LLM prompt assembly plans for token budget and truncation risk</text>
+<rect x="82" y="164" width="328" height="116" rx="20" fill="#a78bfa" opacity=".18" stroke="#a78bfa" stroke-width="3"/>
+<circle cx="118" cy="198" r="17" fill="#f472b6" opacity=".9"/>
+<text x="113" y="205" fill="#1d102b" font-family="Inter, ui-sans-serif, system-ui" font-size="18" font-weight="900">1</text>
+<text x="148" y="206" fill="#faf5ff" font-family="Inter, ui-sans-serif, system-ui" font-size="21" font-weight="800">Input</text>
+<text x="106" y="246" fill="#e9d5ff" font-family="Inter, ui-sans-serif, system-ui" font-size="16">text / JSON / CSV</text>
+<rect x="480" y="164" width="328" height="116" rx="20" fill="#faf5ff" opacity=".07" stroke="#f472b6" stroke-width="3"/>
+<circle cx="516" cy="198" r="17" fill="#f472b6" opacity=".9"/>
+<text x="511" y="205" fill="#1d102b" font-family="Inter, ui-sans-serif, system-ui" font-size="18" font-weight="900">2</text>
+<text x="546" y="206" fill="#faf5ff" font-family="Inter, ui-sans-serif, system-ui" font-size="21" font-weight="800">Reader</text>
+<text x="504" y="246" fill="#e9d5ff" font-family="Inter, ui-sans-serif, system-ui" font-size="16">normalize records</text>
+<rect x="878" y="164" width="328" height="116" rx="20" fill="#faf5ff" opacity=".07" stroke="#a78bfa" stroke-width="3"/>
+<circle cx="914" cy="198" r="17" fill="#f472b6" opacity=".9"/>
+<text x="909" y="205" fill="#1d102b" font-family="Inter, ui-sans-serif, system-ui" font-size="18" font-weight="900">3</text>
+<text x="944" y="206" fill="#faf5ff" font-family="Inter, ui-sans-serif, system-ui" font-size="21" font-weight="800">no-output-reserve</text>
+<text x="902" y="246" fill="#e9d5ff" font-family="Inter, ui-sans-serif, system-ui" font-size="16">high</text>
+<rect x="82" y="314" width="328" height="116" rx="20" fill="#faf5ff" opacity=".07" stroke="#f472b6" stroke-width="3"/>
+<circle cx="118" cy="348" r="17" fill="#f472b6" opacity=".9"/>
+<text x="113" y="355" fill="#1d102b" font-family="Inter, ui-sans-serif, system-ui" font-size="18" font-weight="900">4</text>
+<text x="148" y="356" fill="#faf5ff" font-family="Inter, ui-sans-serif, system-ui" font-size="21" font-weight="800">missing-truncation</text>
+<text x="106" y="396" fill="#e9d5ff" font-family="Inter, ui-sans-serif, system-ui" font-size="16">medium</text>
+<rect x="480" y="314" width="328" height="116" rx="20" fill="#faf5ff" opacity=".07" stroke="#a78bfa" stroke-width="3"/>
+<circle cx="516" cy="348" r="17" fill="#f472b6" opacity=".9"/>
+<text x="511" y="355" fill="#1d102b" font-family="Inter, ui-sans-serif, system-ui" font-size="18" font-weight="900">5</text>
+<text x="546" y="356" fill="#faf5ff" font-family="Inter, ui-sans-serif, system-ui" font-size="21" font-weight="800">near-window-limit</text>
+<text x="504" y="396" fill="#e9d5ff" font-family="Inter, ui-sans-serif, system-ui" font-size="16">low</text>
+<rect x="878" y="314" width="328" height="116" rx="20" fill="#a78bfa" opacity=".18" stroke="#f472b6" stroke-width="3"/>
+<circle cx="914" cy="348" r="17" fill="#f472b6" opacity=".9"/>
+<text x="909" y="355" fill="#1d102b" font-family="Inter, ui-sans-serif, system-ui" font-size="18" font-weight="900">6</text>
+<text x="944" y="356" fill="#faf5ff" font-family="Inter, ui-sans-serif, system-ui" font-size="21" font-weight="800">Report</text>
+<text x="902" y="396" fill="#e9d5ff" font-family="Inter, ui-sans-serif, system-ui" font-size="16">Markdown or JSON</text>
+<path d="M402 222H488" stroke="#f472b6" stroke-width="4" stroke-linecap="round" opacity=".7"/>
+<path d="M800 222H886" stroke="#f472b6" stroke-width="4" stroke-linecap="round" opacity=".7"/>
+<path d="M1042 274C1042 310, 246 284, 246 320" stroke="#f472b6" stroke-width="4" stroke-linecap="round" fill="none" opacity=".7"/>
+<path d="M402 372H488" stroke="#f472b6" stroke-width="4" stroke-linecap="round" opacity=".7"/>
+<path d="M800 372H886" stroke="#f472b6" stroke-width="4" stroke-linecap="round" opacity=".7"/>
+<path d="M72 460h1136" stroke="#a78bfa" stroke-width="8" stroke-linecap="round" opacity=".56"/>
+<text x="72" y="492" fill="#e9d5ff" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="16">DEVELOPER TOOL</text>
+</svg>
